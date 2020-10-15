@@ -1,16 +1,11 @@
 <resources>
     <string name="app_name">StudentApp</string>
-    <string name="student_app_heading">Student App</string>
-    <string name="already_registered_login">Already Registered? Login</string>
-    <string name="create_new_account">Create New Account</string>
-    <string name="full_name_register">Full Name</string>
-    <string name="email_register">Email</string>
-    <string name="password_register">Password</string>
-    <string name="register_btn">Register</string>
-    <string name="student_app_login">Student App</string>
     <string name="login">Login</string>
-    <string name="email_login">Email</string>
-    <string name="password_login">Password</string>
-    <string name="login_btn">Login</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
     <string name="new_user_register">New user? Register</string>
+    <string name="create_new_account">Create New Account</string>
+    <string name="full_name">Full Name</string>
+    <string name="register">Register</string>
+    <string name="already_registered_login">Already Registered? Login</string>
 </resources>
