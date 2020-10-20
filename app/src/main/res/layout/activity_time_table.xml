@@ -25,7 +25,7 @@
             <ImageView
                 android:layout_width="100sp"
                 android:layout_height="100sp"
-                android:src="@drawable/student"
+                android:src="@drawable/timetable"
                 android:padding="5sp"
                 />
             <TextView

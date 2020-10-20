@@ -30,13 +30,26 @@
                     android:padding="5sp"
                     />
                 <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:text="Student App"
                     android:textSize="30sp"
                     android:gravity="center"
+                    android:paddingTop="25sp"
+                    android:padding="25sp"
                     android:textAlignment="center"
                     />
+
+                <Button
+                    android:id="@+id/buttonok"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableTop="@drawable/logout"
+                    android:background="@android:color/white"
+                    android:onClick="logout"
+                    android:text="logout"/>
+
+
             </LinearLayout>
 
 <!--        </androidx.cardview.widget.CardView>-->
@@ -153,23 +166,8 @@
                         android:textAlignment="center"
                         />
                 </LinearLayout>
-
             </androidx.cardview.widget.CardView>
-
-
         </GridLayout>
-
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Logout"
-            android:id="@+id/mainlogout"
-
-            ></Button>
-
-
-
     </LinearLayout>
 
 
