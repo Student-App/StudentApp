@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
         {
             startActivity(Intent(this, TimeTable::class.java))
         }
-        
+
 
     }
 
