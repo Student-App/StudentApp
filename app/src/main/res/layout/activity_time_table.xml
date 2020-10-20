@@ -71,7 +71,7 @@
 
                         android:layout_width="100sp"
                         android:layout_height="100sp"
-                        android:src="@drawable/M"
+                        android:src="@drawable/m"
                         android:padding="5sp"
                         />
                     <TextView
@@ -108,7 +108,7 @@
 
                         android:layout_width="100sp"
                         android:layout_height="100sp"
-                        android:src="@drawable/T"
+                        android:src="@drawable/t"
                         android:padding="5sp"
                         />
                     <TextView
@@ -144,7 +144,7 @@
 
                         android:layout_width="100sp"
                         android:layout_height="100sp"
-                        android:src="@drawable/W"
+                        android:src="@drawable/w"
                         android:padding="5sp"
 
                         />
@@ -183,7 +183,7 @@
 
                         android:layout_width="100sp"
                         android:layout_height="100sp"
-                        android:src="@drawable/T"
+                        android:src="@drawable/t"
                         android:padding="5sp"
 
                         />
@@ -222,7 +222,7 @@
 
                         android:layout_width="100sp"
                         android:layout_height="100sp"
-                        android:src="@drawable/F"
+                        android:src="@drawable/f"
                         android:padding="5sp"
 
                         />
@@ -262,7 +262,7 @@
 
                         android:layout_width="100sp"
                         android:layout_height="100sp"
-                        android:src="@drawable/S"
+                        android:src="@drawable/s"
                         android:padding="5sp"
 
                         />
@@ -303,7 +303,7 @@
 
                         android:layout_width="100sp"
                         android:layout_height="100sp"
-                        android:src="@drawable/S"
+                        android:src="@drawable/s"
                         android:padding="5sp"
 
                         />
