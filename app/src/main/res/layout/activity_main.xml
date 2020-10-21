@@ -22,32 +22,38 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                >
                 <ImageView
                     android:layout_width="100sp"
                     android:layout_height="100sp"
                     android:src="@drawable/student"
                     android:padding="5sp"
                     />
+
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Student App"
-                    android:textSize="30sp"
+                    android:layout_height="100dp"
+                    android:fontFamily="@font/aclonica"
                     android:gravity="center"
                     android:paddingTop="25sp"
-                    android:padding="25sp"
+                    android:text="Student App"
                     android:textAlignment="center"
-                    />
+
+                    android:textSize="24sp" />
 
                 <Button
                     android:id="@+id/buttonok"
-                    android:layout_width="wrap_content"
+                    android:layout_width="135dp"
                     android:layout_height="wrap_content"
-                    android:drawableTop="@drawable/logout"
+                    android:layout_marginLeft="10sp"
                     android:background="@android:color/white"
+                    android:drawableTop="@drawable/logout"
                     android:onClick="logout"
-                    android:text="logout"/>
+                    android:padding="20sp"
+
+                    android:text="logout" />
 
 
             </LinearLayout>
@@ -90,6 +96,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/aclonica"
                         android:text="Time Table"
                         android:textSize="30sp"
                         android:gravity="center"
@@ -125,6 +132,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/aclonica"
                         android:text="Time Table"
                         android:textSize="30sp"
                         android:gravity="center"
@@ -160,6 +168,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/aclonica"
                         android:text="Time Table"
                         android:textSize="30sp"
                         android:gravity="center"

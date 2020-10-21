@@ -30,7 +30,9 @@
                 />
             <TextView
                 android:layout_width="match_parent"
+
                 android:layout_height="match_parent"
+                android:fontFamily="@font/aclonica"
                 android:text="Time Table"
                 android:textSize="30sp"
                 android:textStyle="bold|italic"
@@ -51,6 +53,7 @@
             android:layout_marginRight="10sp"
             >
             <androidx.cardview.widget.CardView
+                android:id="@+id/monday"
                 android:layout_row="0"
                 android:layout_column="0"
                 android:layout_gravity="fill"
@@ -60,26 +63,30 @@
                 android:layout_height="wrap_content"
                 app:cardElevation="6dp"
                 android:layout_margin="12dp"
-                app:cardCornerRadius="10sp">
+                app:cardCornerRadius="10sp"
+                tools:ignore="InvalidId">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:layout_gravity="center">
+                    >
+
                     <ImageView
 
                         android:layout_width="100sp"
                         android:layout_height="100sp"
                         android:src="@drawable/m"
                         android:padding="5sp"
+
                         />
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/aclonica"
                         android:text="Monday"
                         android:textSize="30sp"
-                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="20sp"
                         android:textAlignment="center"
                         />
                 </LinearLayout>
@@ -101,9 +108,7 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:layout_gravity="center">
+                    android:layout_height="match_parent">
                     <ImageView
 
                         android:layout_width="100sp"
@@ -114,9 +119,11 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/aclonica"
                         android:text="Tuesday"
                         android:textSize="30sp"
-                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="20sp"
                         android:textAlignment="center"
                         />
                 </LinearLayout>
@@ -138,8 +145,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:layout_gravity="center">
+                    >
                     <ImageView
 
                         android:layout_width="100sp"
@@ -151,9 +157,11 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/aclonica"
                         android:text="Wednesday"
-                        android:textSize="30sp"
-                        android:gravity="center"
+                        android:textSize="30dp"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="20sp"
                         android:textAlignment="center"
                         />
                 </LinearLayout>
@@ -177,8 +185,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:layout_gravity="center">
+                    >
                     <ImageView
 
                         android:layout_width="100sp"
@@ -190,9 +197,11 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/aclonica"
                         android:text="Thursday"
                         android:textSize="30sp"
-                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="20sp"
                         android:textAlignment="center"
                         />
                 </LinearLayout>
@@ -216,8 +225,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:layout_gravity="center">
+                    >
                     <ImageView
 
                         android:layout_width="100sp"
@@ -229,9 +237,11 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/aclonica"
                         android:text="Friday"
                         android:textSize="30sp"
-                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="20sp"
                         android:textAlignment="center"
                         />
                 </LinearLayout>
@@ -256,8 +266,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:layout_gravity="center">
+                    >
                     <ImageView
 
                         android:layout_width="100sp"
@@ -269,9 +278,11 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/aclonica"
                         android:text="Saturday"
                         android:textSize="30sp"
-                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="20sp"
                         android:textAlignment="center"
                         />
                 </LinearLayout>
@@ -297,8 +308,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:layout_gravity="center">
+                    >
                     <ImageView
 
                         android:layout_width="100sp"
@@ -310,9 +320,11 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/aclonica"
                         android:text="Sunday"
                         android:textSize="30sp"
-                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="20sp"
                         android:textAlignment="center"
                         />
                 </LinearLayout>
