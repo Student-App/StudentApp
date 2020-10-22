@@ -94,6 +94,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/tuesday"
                 android:layout_row="1"
                 android:layout_column="0"
                 android:layout_gravity="fill"
@@ -131,6 +132,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/wednesday"
                 android:layout_row="2"
                 android:layout_column="0"
                 android:layout_gravity="fill"
@@ -171,6 +173,7 @@
 
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/thursday"
                 android:layout_row="3"
                 android:layout_column="0"
                 android:layout_gravity="fill"
@@ -211,6 +214,7 @@
 
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/friday"
                 android:layout_row="4"
                 android:layout_column="0"
                 android:layout_gravity="fill"
@@ -252,6 +256,7 @@
 
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/saturday"
                 android:layout_row="5"
                 android:layout_column="0"
                 android:layout_gravity="fill"
@@ -289,10 +294,8 @@
 
             </androidx.cardview.widget.CardView>
 
-
-
-
             <androidx.cardview.widget.CardView
+                android:id="@+id/sunday"
                 android:layout_row="6"
                 android:layout_column="0"
                 android:layout_gravity="fill"
