@@ -5,7 +5,6 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 
 class TimeTable : AppCompatActivity() {
-    val EXTRA_TEXT = "com.example.studentapp.example.EXTRA_TEXT"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_time_table)

@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import com.example.studentapp.attendance.Attendance
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -19,6 +20,9 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this, TimeTable::class.java))
         }
 
+        attendance.setOnClickListener(){
+            startActivity(Intent(this, Attendance::class.java))
+        }
 
     }
 
