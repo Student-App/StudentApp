@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.studentapp.R
 import com.firebase.ui.database.FirebaseRecyclerOptions
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 
 var adapter: adapterAttendance? = null
@@ -13,10 +14,10 @@ class Attendance : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_attendance)
         val recviewAttend = findViewById<RecyclerView>(R.id.recview_attend)
-
+        val userId: String = FirebaseAuth.getInstance().currentUser?.uid ?:""
         val options: FirebaseRecyclerOptions<Model_attendance> = FirebaseRecyclerOptions.Builder<Model_attendance>()
             .setQuery(
-                FirebaseDatabase.getInstance().reference.child("/Courses/s1"),
+                FirebaseDatabase.getInstance().reference.child("Attendance/$userId/Courses"),
                 Model_attendance::class.java
             )
             .build()

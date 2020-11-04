@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.studentapp.R
 import com.firebase.ui.database.FirebaseRecyclerAdapter
 import com.firebase.ui.database.FirebaseRecyclerOptions
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 
 class adapterAttendance(options: FirebaseRecyclerOptions<Model_attendance>) :
@@ -21,13 +22,13 @@ class adapterAttendance(options: FirebaseRecyclerOptions<Model_attendance>) :
 
         holder.course.text = model.course_name
         holder.Absence.text = model.Absence
+        val userId: String = FirebaseAuth.getInstance().currentUser?.uid ?:""
         holder.plus.setOnClickListener(){
             var absent: Int = model.Absence?.toInt() ?: 0
             absent++
             val map = mutableMapOf("Absence" to absent.toString())
-
             getRef(position).key?.let { it1 ->
-                FirebaseDatabase.getInstance().reference.child("Courses/s1")
+                FirebaseDatabase.getInstance().reference.child("Attendance/$userId/Courses")
                     .child(it1).updateChildren(map as Map<String, Any>)
             }
         }
@@ -39,9 +40,8 @@ class adapterAttendance(options: FirebaseRecyclerOptions<Model_attendance>) :
                 absent--
             }
             val map = mutableMapOf("Absence" to absent.toString())
-
             getRef(position).key?.let { it1 ->
-                FirebaseDatabase.getInstance().reference.child("Courses/s1")
+                FirebaseDatabase.getInstance().reference.child("Attendance/$userId/Courses")
                     .child(it1).updateChildren(map as Map<String, Any>)
             }
         }
