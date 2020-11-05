@@ -20,7 +20,7 @@ class adapterAttendance(options: FirebaseRecyclerOptions<Model_attendance>) :
         model: Model_attendance
     ) {
 
-        holder.course.text = model.course_name
+        holder.course.text = model.course_name?.toUpperCase() ?: ""
         holder.Absence.text = model.Absence
         val userId: String = FirebaseAuth.getInstance().currentUser?.uid ?:""
         holder.plus.setOnClickListener(){

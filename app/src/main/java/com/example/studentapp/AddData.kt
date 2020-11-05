@@ -8,7 +8,7 @@ import android.widget.TimePicker
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.*
 
 
 class AddData : AppCompatActivity() {
@@ -33,7 +33,9 @@ class AddData : AppCompatActivity() {
         map["time"] = msg
 
         val text = intent.getStringExtra("day")
+
         attendanceRecord()
+
         FirebaseDatabase.getInstance().reference.child("TimeTable/$userId/Day/$text/Course").push()
             .setValue(map)
             .addOnSuccessListener {
@@ -52,13 +54,29 @@ class AddData : AppCompatActivity() {
     private fun attendanceRecord() {
         val userId: String = FirebaseAuth.getInstance().currentUser?.uid ?:""
         val cname:EditText = findViewById(R.id.add_course)
-        val map = mutableMapOf<String, Any?>()
-        map["course_name"] = cname.text.toString().toLowerCase()
-        map["Absence"] = "0"
-//        val ref = FirebaseDatabase.getInstance().reference.child("Attendance/$userId/Courses")
-//        ref.orderByChild("course_name").equalTo(cname.text.toString().toLowerCase()).addListenerForSingleValueEvent()
-        FirebaseDatabase.getInstance().reference.child("Attendance/$userId/Courses").push()
-            .setValue(map)
+        // Checking if course already exists in record
+        val courseName = cname.text.toString().toLowerCase()
+        val query: Query = FirebaseDatabase.getInstance().reference.child("Attendance/$userId/Courses")
+            .orderByChild("course_name").equalTo(courseName)
+        query.addListenerForSingleValueEvent(object: ValueEventListener{
+            override fun onCancelled(error: DatabaseError) {
+                //
+            }
+
+            override fun onDataChange(snapshot: DataSnapshot) {
+                if(snapshot.exists()){
+                    //
+                }else{
+                    val map = mutableMapOf<String, Any?>()
+                    map["course_name"] = courseName
+                    map["Absence"] = "0"
+                    FirebaseDatabase.getInstance().reference.child("Attendance/$userId/Courses").push()
+                        .setValue(map)
+                }
+
+            }
+        })
+
     }
 
     private fun processTime() {
