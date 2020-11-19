@@ -5,12 +5,18 @@ import android.content.DialogInterface
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.*
+import android.view.WindowManager
+import android.widget.Button
+import android.widget.ImageButton
+import android.widget.TextView
+import android.widget.TimePicker
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.firebase.ui.database.FirebaseRecyclerAdapter
 import com.firebase.ui.database.FirebaseRecyclerOptions
+import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
+
 
 var msg:String = ""
 class myadapter(options: FirebaseRecyclerOptions<Model>, private val day:String) :
@@ -26,19 +32,26 @@ class myadapter(options: FirebaseRecyclerOptions<Model>, private val day:String)
             val builder = AlertDialog.Builder(holder.course.context)
             val inflater = LayoutInflater.from(holder.course.context)
             val view = inflater.inflate(R.layout.dialogcontent,null)
-            val courseName = view.findViewById<EditText>(R.id.edit_course)
+            val courseName = view.findViewById<TextInputLayout>(R.id.edit_course)
             val time = view.findViewById<TimePicker>(R.id.edit_time)
 
             builder.setView(view)
-            courseName.setText(model.course_name)
+            courseName.editText?.setText(model.course_name)
             val alert = builder.create()
             alert.show()
+
+            val layoutParams = WindowManager.LayoutParams()
+            layoutParams.copyFrom(alert.window?.attributes)
+            layoutParams.width = WindowManager.LayoutParams.MATCH_PARENT
+            layoutParams.height = WindowManager.LayoutParams.MATCH_PARENT
+            alert.window?.attributes = layoutParams
+
             val submit:Button = view.findViewById<Button>(R.id.edit_submit)
             val cancel:Button = view.findViewById(R.id.edit_cancel)
             processTime(time)
             submit.setOnClickListener {
                 val map = mutableMapOf<String, Any?>()
-                map["course_name"] = courseName.text.toString().toLowerCase()
+                map["course_name"] = courseName.editText?.text.toString().toLowerCase()
                 map["time"] = msg
                 val userId: String = FirebaseAuth.getInstance().currentUser?.uid ?:""
                 getRef(position).key?.let { it1 ->

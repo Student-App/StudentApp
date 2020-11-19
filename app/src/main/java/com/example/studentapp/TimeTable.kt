@@ -2,12 +2,14 @@ package com.example.studentapp
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 
 class TimeTable : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_time_table)
+        window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN)
 
         val day1 : androidx.cardview.widget.CardView = findViewById(R.id.monday)
         val day2 : androidx.cardview.widget.CardView = findViewById(R.id.tuesday)

@@ -1,6 +1,7 @@
 package com.example.studentapp.attendance
 
 import android.os.Bundle
+import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.studentapp.R
@@ -13,6 +14,8 @@ class Attendance : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_attendance)
+        window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN)
+
         val recviewAttend = findViewById<RecyclerView>(R.id.recview_attend)
         val userId: String = FirebaseAuth.getInstance().currentUser?.uid ?:""
         val options: FirebaseRecyclerOptions<Model_attendance> = FirebaseRecyclerOptions.Builder<Model_attendance>()
