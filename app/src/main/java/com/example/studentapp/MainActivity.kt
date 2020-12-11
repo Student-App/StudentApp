@@ -9,6 +9,7 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import com.example.studentapp.attendance.Attendance
+import com.example.studentapp.marks.Marks
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
@@ -67,6 +68,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             startActivity(Intent(this, Attendance::class.java))
         }
 
+        marks.setOnClickListener(){
+            startActivity(Intent(this, Marks::class.java))
+        }
     }
 
     override fun onBackPressed() {

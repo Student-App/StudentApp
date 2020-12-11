@@ -18,6 +18,7 @@
         <activity android:name=".Profile"/>
         <activity android:name=".AddData" />
         <activity android:name=".attendance.Attendance" />
+        <activity android:name=".marks.Marks" />
         <activity android:name=".Day" />
         <activity android:name=".TimeTable" />
         <activity android:name=".Register" />

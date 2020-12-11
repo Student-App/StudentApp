@@ -179,7 +179,7 @@ class Profile : AppCompatActivity(), PermissionListener {
                     }
 
             }
-            if(pFlag){
+            if(pFlag || flag){
                 Toast.makeText(this, "Profile Updated Successfully", Toast.LENGTH_SHORT ).show()
             }else{
                 Toast.makeText(this, "Nothing to Update", Toast.LENGTH_SHORT ).show()
