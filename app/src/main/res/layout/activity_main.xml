@@ -154,7 +154,8 @@
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="15dp"
                         app:srcCompat="@drawable/resource"
-                        tools:ignore="ContentDescription" />
+                        tools:ignore="ContentDescription"
+                        android:onClick="resources_btn"/>
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView

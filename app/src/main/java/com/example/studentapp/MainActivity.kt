@@ -3,11 +3,15 @@ package com.example.studentapp
 import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
+import android.view.View
 import android.view.WindowManager
 import android.widget.TextView
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.cardview.widget.CardView
 import androidx.core.view.GravityCompat
+import com.example.studentapp.Resources.UploadViewNotes
+import com.example.studentapp.Resources.ViewResources
 import com.example.studentapp.attendance.Attendance
 import com.example.studentapp.marks.Marks
 import com.google.android.material.navigation.NavigationView
@@ -40,6 +44,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         val headView = nav_view.getHeaderView(0)
         val name: TextView = headView.findViewById(R.id.student_name)
         val email: TextView = headView.findViewById(R.id.student_email)
+//        val resources  = findViewById<CardView>(R.id.resources)
 
         // Accessing Name and email of current user
         val query: Query = FirebaseDatabase.getInstance().reference.child("Users/$userId")
@@ -71,6 +76,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         marks.setOnClickListener {
             startActivity(Intent(this, Marks::class.java))
         }
+
+
     }
 
     override fun onBackPressed() {
@@ -104,6 +111,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             }
         }
 
+    }
+
+    fun resources_btn(view: View) {
+        startActivity(Intent(this,UploadViewNotes::class.java))
     }
 
 
