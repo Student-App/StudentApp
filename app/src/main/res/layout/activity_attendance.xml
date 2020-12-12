@@ -7,20 +7,39 @@
     tools:context=".attendance.Attendance"
     android:background="@drawable/header">
 
+    <LinearLayout
+        android:id="@+id/linearLayout6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/aclonica"
+            android:gravity="center"
+            android:text="Attendance "
+            android:textAlignment="center"
+            android:textSize="30sp"
+            android:textStyle="bold|italic" />
+    </LinearLayout>
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recview_attend"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="355dp"
+        android:layout_height="535dp"
         android:layout_marginStart="1dp"
         android:layout_marginTop="1dp"
         android:layout_marginEnd="1dp"
         android:layout_marginBottom="1dp"
+        android:scrollbars="vertical"
+        app:layoutManager="LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:scrollbars="vertical"
-        app:layoutManager="LinearLayoutManager"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,6 +3,7 @@ package com.example.studentapp.course_marks
 import android.content.Intent
 import android.os.Bundle
 import android.view.WindowManager
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.studentapp.R
@@ -19,7 +20,12 @@ class CourseMarks : AppCompatActivity() {
         window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN)
 
         val recviewCourseMarks = findViewById<RecyclerView>(R.id.recview_course_marks)
+        val cname = findViewById<TextView>(R.id.course_name)
         val text = intent.getStringExtra("ID")
+        val courseName = intent.getStringExtra("cname")
+
+        cname.text = courseName
+
         val userId: String = FirebaseAuth.getInstance().currentUser?.uid ?:""
         val options: FirebaseRecyclerOptions<Model_course_marks> = FirebaseRecyclerOptions.Builder<Model_course_marks>()
             .setQuery(
