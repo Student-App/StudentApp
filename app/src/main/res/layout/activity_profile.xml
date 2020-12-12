@@ -19,11 +19,13 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0">
 
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/profile_image"
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:src="@drawable/student"
+            app:civ_border_width="2dp"
+            app:civ_border_color="#FF000000"
             tools:ignore="ContentDescription" />
 
         <ImageView

@@ -1,10 +1,7 @@
 <resources>
     <string name="app_name">StudentApp</string>
     <string name="login">Login</string>
-    <string name="email">Email</string>
-    <string name="password">Password</string>
     <string name="new_user_register">New user? Register</string>
-    <string name="create_new_account">Create New Account</string>
     <string name="full_name">Full Name</string>
     <string name="register">Register</string>
     <string name="Open">Open</string>
@@ -38,4 +35,8 @@
     <string name="sample_email">abc@gmail.com</string>
     <string name="total_marks">Total</string>
     <string name="marks_obtained">Obtained</string>
+    <string name="test_name">Test Name</string>
+    <string name="maximum_marks">Maximum Marks</string>
+    <string name="test_marks_obtained">Marks Obtained</string>
+    <string name="add_test">Add Test</string>
 </resources>

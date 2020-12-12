@@ -14,7 +14,7 @@ import com.google.firebase.database.FirebaseDatabase
 
 class adapterAttendance(options: FirebaseRecyclerOptions<Model_attendance>) :
     FirebaseRecyclerAdapter<Model_attendance, adapterAttendance.myviewholder>(options) {
-    protected override fun onBindViewHolder(
+    override fun onBindViewHolder(
         holder: adapterAttendance.myviewholder,
         position: Int,
         model: Model_attendance
@@ -23,7 +23,7 @@ class adapterAttendance(options: FirebaseRecyclerOptions<Model_attendance>) :
         holder.course.text = model.course_name?.toUpperCase() ?: ""
         holder.Absence.text = model.Absence
         val userId: String = FirebaseAuth.getInstance().currentUser?.uid ?:""
-        holder.plus.setOnClickListener(){
+        holder.plus.setOnClickListener {
             var absent: Int = model.Absence?.toInt() ?: 0
             absent++
             val map = mutableMapOf("Absence" to absent.toString())
@@ -33,7 +33,7 @@ class adapterAttendance(options: FirebaseRecyclerOptions<Model_attendance>) :
             }
         }
 
-        holder.minus.setOnClickListener(){
+        holder.minus.setOnClickListener {
             var absent: Int = model.Absence?.toInt() ?: 0
 
             if(absent>0){

@@ -47,6 +47,7 @@ class Register : AppCompatActivity() {
                     val map = mutableMapOf<String, Any?>()
                     map["Name"] = mFullName.editText?.text.toString().trim()
                     map["Email"] = inputEmail
+                    map["Image"] = ""
                     FirebaseDatabase.getInstance().reference.child("Users/$userId")
                         .setValue(map)
                     Toast.makeText(this, "Sign Up Successful", Toast.LENGTH_SHORT ).show()

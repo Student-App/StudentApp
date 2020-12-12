@@ -64,11 +64,11 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             startActivity(Intent(this, TimeTable::class.java))
         }
 
-        attendance.setOnClickListener(){
+        attendance.setOnClickListener {
             startActivity(Intent(this, Attendance::class.java))
         }
 
-        marks.setOnClickListener(){
+        marks.setOnClickListener {
             startActivity(Intent(this, Marks::class.java))
         }
     }

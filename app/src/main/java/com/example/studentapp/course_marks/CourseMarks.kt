@@ -1,4 +1,4 @@
-package com.example.studentapp.marks
+package com.example.studentapp.course_marks
 
 import android.content.Intent
 import android.os.Bundle
@@ -11,30 +11,33 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 
-var adapter: adapterMarks? = null
-class Marks : AppCompatActivity() {
+var adapter: adapterCourseMarks? = null
+class CourseMarks : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_marks)
+        setContentView(R.layout.activity_course_marks)
         window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN)
 
-        val recviewMarks = findViewById<RecyclerView>(R.id.recview_marks)
+        val recviewCourseMarks = findViewById<RecyclerView>(R.id.recview_course_marks)
+        val text = intent.getStringExtra("ID")
         val userId: String = FirebaseAuth.getInstance().currentUser?.uid ?:""
-        val options: FirebaseRecyclerOptions<Model_marks> = FirebaseRecyclerOptions.Builder<Model_marks>()
+        val options: FirebaseRecyclerOptions<Model_course_marks> = FirebaseRecyclerOptions.Builder<Model_course_marks>()
             .setQuery(
-                FirebaseDatabase.getInstance().reference.child("Marks/$userId/Courses"),
-                Model_marks::class.java
+                FirebaseDatabase.getInstance().reference.child("Marks/$userId/Courses/$text/Tests"),
+                Model_course_marks::class.java
             )
             .build()
 
-        adapter = adapterMarks(options)
-        recviewMarks.adapter = adapter
+        adapter = adapterCourseMarks(options)
+        recviewCourseMarks.adapter = adapter
 
-        val fb: FloatingActionButton = findViewById(R.id.madd)
+        val fb: FloatingActionButton = findViewById(R.id.cm_add)
         fb.setOnClickListener{
-            val intent = Intent(this, AddMarks::class.java)
+            val intent = Intent(this, AddCourseMarks::class.java)
+            intent.putExtra("ID", text)
             startActivity(intent)
         }
+
     }
 
     override fun onStart() {

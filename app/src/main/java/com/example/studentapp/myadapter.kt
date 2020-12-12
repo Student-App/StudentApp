@@ -21,7 +21,7 @@ import com.google.firebase.database.FirebaseDatabase
 var msg:String = ""
 class myadapter(options: FirebaseRecyclerOptions<Model>, private val day:String) :
     FirebaseRecyclerAdapter<Model, myadapter.myviewholder>(options) {
-    protected override fun onBindViewHolder(
+    override fun onBindViewHolder(
         holder: myviewholder,
         position: Int,
         model: Model

@@ -27,6 +27,7 @@ import com.karumi.dexter.listener.PermissionGrantedResponse
 import com.karumi.dexter.listener.PermissionRequest
 import com.karumi.dexter.listener.single.PermissionListener
 import com.theartofdev.edmodo.cropper.CropImage
+import de.hdodenhof.circleimageview.CircleImageView
 import kotlinx.android.synthetic.main.activity_profile.*
 import kotlinx.android.synthetic.main.update_password.*
 import kotlinx.android.synthetic.main.update_password.view.*
@@ -47,6 +48,7 @@ class Profile : AppCompatActivity(), PermissionListener {
         )
         val userId = currentUser?.uid
         val name:TextInputLayout = findViewById(R.id.profile_name)
+        val image: CircleImageView = findViewById(R.id.profile_image)
         var sName:String = ""
         val query: Query = FirebaseDatabase.getInstance().reference.child("Users/$userId")
             query.addValueEventListener(object: ValueEventListener{
@@ -56,6 +58,7 @@ class Profile : AppCompatActivity(), PermissionListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
                     if(snapshot.exists()){
                         sName = snapshot.child("Name").value.toString()
+                        val url:String = snapshot.child("Image").value.toString()
                         name.editText?.setText(sName)
                     }
                 }
@@ -150,7 +153,7 @@ class Profile : AppCompatActivity(), PermissionListener {
                 val map = mutableMapOf<String, Any?>()
                 map["Name"] = newName
                 FirebaseDatabase.getInstance().getReference("Users/$userId")
-                    .setValue(map)
+                    .updateChildren(map)
                     .addOnSuccessListener {
                         pFlag = true
                     }
@@ -168,7 +171,7 @@ class Profile : AppCompatActivity(), PermissionListener {
                                 val map = mutableMapOf<String, Any?>()
                                 map["Image"] = it.toString()
                                 FirebaseDatabase.getInstance().getReference("Users/$userId")
-                                    .setValue(map)
+                                    .updateChildren(map)
                                     .addOnSuccessListener {
                                         pFlag = true
                                     }
@@ -192,7 +195,7 @@ class Profile : AppCompatActivity(), PermissionListener {
         val uri = data?.data
         if (requestCode == 1 && resultCode == Activity.RESULT_OK && data != null) {
             CropImage.activity(uri)
-                .start(this);
+                .start(this)
         }
         if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
             val result = CropImage.getActivityResult(data)
