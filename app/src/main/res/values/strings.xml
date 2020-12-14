@@ -40,4 +40,7 @@
     <string name="test_marks_obtained">Marks Obtained</string>
     <string name="add_test">Add Test</string>
     <string name="questions">Questions?</string>
+    <string name="resources_upload">Enter file name</string>
+    <string name="upload">Upload</string>
+    <string name="download">Download</string>
 </resources>
