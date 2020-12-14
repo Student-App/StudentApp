@@ -129,7 +129,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout">
             <androidx.cardview.widget.CardView
-                android:id="@+id/resources"
+                android:id="@+id/resourcesBtn"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="10dp"
@@ -155,7 +155,7 @@
                         android:layout_marginTop="15dp"
                         app:srcCompat="@drawable/resource"
                         tools:ignore="ContentDescription"
-                        android:onClick="resources_btn"/>
+                        />
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView

@@ -76,7 +76,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         marks.setOnClickListener {
             startActivity(Intent(this, Marks::class.java))
         }
-
+        resourcesBtn.setOnClickListener{
+            startActivity(Intent(this,UploadViewNotes::class.java))
+        }
 
     }
 
@@ -113,9 +115,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     }
 
-    fun resources_btn(view: View) {
-        startActivity(Intent(this,UploadViewNotes::class.java))
-    }
+
 
 
 }
