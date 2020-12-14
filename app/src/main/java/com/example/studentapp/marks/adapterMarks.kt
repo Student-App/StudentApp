@@ -10,7 +10,6 @@ import com.example.studentapp.R
 import com.example.studentapp.course_marks.CourseMarks
 import com.firebase.ui.database.FirebaseRecyclerAdapter
 import com.firebase.ui.database.FirebaseRecyclerOptions
-import com.google.firebase.auth.FirebaseAuth
 
 class adapterMarks(options: FirebaseRecyclerOptions<Model_marks>):
     FirebaseRecyclerAdapter<Model_marks, adapterMarks.myviewholder>(options) {
@@ -21,11 +20,11 @@ class adapterMarks(options: FirebaseRecyclerOptions<Model_marks>):
     ) {
 
         holder.course.text = model.course_name?.toUpperCase() ?: ""
-        val userId: String = FirebaseAuth.getInstance().currentUser?.uid ?: ""
         holder.course.setOnClickListener {
             val text: String? = getRef(position).key
             val intent = Intent(holder.course.context, CourseMarks::class.java)
             intent.putExtra("ID", text)
+            intent.putExtra("cname", model.course_name)
             holder.course.context.startActivity(intent)
         }
 

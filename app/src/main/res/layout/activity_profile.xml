@@ -83,6 +83,7 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/profile_update"
+
             android:layout_width="264dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"

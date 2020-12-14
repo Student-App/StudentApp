@@ -7,24 +7,42 @@
     tools:context=".Day"
     android:background="@drawable/header">
 
+    <LinearLayout
+        android:id="@+id/linearLayout6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:id="@+id/course_name"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/aclonica"
+            android:gravity="center"
+            android:text="Tests"
+            android:textAlignment="center"
+            android:textSize="30sp"
+            android:textStyle="bold|italic" />
+    </LinearLayout>
+
 
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_margin="10dp"
         android:id="@+id/recview_course_marks"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="347dp"
+        android:layout_height="493dp"
+        android:layout_margin="10dp"
         android:layout_marginStart="1dp"
-        android:layout_marginTop="1dp"
         android:layout_marginEnd="1dp"
         android:layout_marginBottom="1dp"
         android:scrollbars="vertical"
         app:layoutManager="LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout6"
+        app:layout_constraintVertical_bias="0.209" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/cm_add"

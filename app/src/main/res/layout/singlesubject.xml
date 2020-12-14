@@ -3,22 +3,22 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardCornerRadius="5dp"
+    app:cardCornerRadius="20dp"
+    android:layout_margin="10dp"
     android:elevation="5dp"
     app:cardUseCompatPadding="true">
 
 
-
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
             android:id="@+id/course"
+            android:layout_width="341dp"
+            android:layout_height="65dp"
+            android:textAlignment="center"
+            android:paddingTop="15dp"
             android:text="@string/course1"
-            android:gravity="center"
-            android:textStyle="bold"
-            android:textSize="25sp"
             android:textColor="#000"
-            android:layout_marginStart="10dp"/>
+            android:textSize="25sp"
+            android:textStyle="bold" />
 
 
 </androidx.cardview.widget.CardView>

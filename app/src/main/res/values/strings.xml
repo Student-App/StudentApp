@@ -39,7 +39,5 @@
     <string name="maximum_marks">Maximum Marks</string>
     <string name="test_marks_obtained">Marks Obtained</string>
     <string name="add_test">Add Test</string>
-    <string name="download">Download</string>
-    <string name="upload">Upload</string>
-    <string name="resources_upload">Enter File Name</string>
+    <string name="questions">Questions?</string>
 </resources>
