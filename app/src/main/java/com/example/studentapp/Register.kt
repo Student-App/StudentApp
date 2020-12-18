@@ -45,11 +45,20 @@ class Register : AppCompatActivity() {
                     progressBar2.visibility = View.INVISIBLE
                     val userId: String = FirebaseAuth.getInstance().currentUser?.uid ?:""
                     val map = mutableMapOf<String, Any?>()
+
                     map["Name"] = mFullName.editText?.text.toString().trim()
                     map["Email"] = inputEmail
                     map["Image"] = ""
+
+                    val user = Model.User(
+                        userId,
+                        map["Name"].toString(),
+                        map["Image"].toString(),
+                        map["Email"].toString()
+                    )
+
                     FirebaseDatabase.getInstance().reference.child("Users/$userId")
-                        .setValue(map)
+                        .setValue(user)
                     Toast.makeText(this, "Sign Up Successful", Toast.LENGTH_SHORT ).show()
                     startActivity(Intent(this, MainActivity::class.java))
                 }else{
@@ -64,3 +73,4 @@ class Register : AppCompatActivity() {
         }
     }
 }
+

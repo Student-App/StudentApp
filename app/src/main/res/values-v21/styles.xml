@@ -9,4 +9,12 @@
         <item name="android:statusBarColor">#00000000</item>
 
     </style>
+    <style name="MessageAppTheme" parent="Theme.AppCompat.Light.DarkActionBar" >
+    <item name="colorPrimary">@color/colorPrimary</item>
+    <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+    <item name="colorAccent">@color/colorAccent</item>
+
+    </style>
+
+
 </resources>

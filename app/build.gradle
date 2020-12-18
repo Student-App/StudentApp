@@ -39,6 +39,9 @@ dependencies {
     implementation 'com.google.firebase:firebase-analytics-ktx'
     implementation 'com.google.firebase:firebase-auth:20.0.0'
     implementation 'com.android.support:multidex:1.0.3'
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
+    implementation "com.xwray:groupie:2.1.0"
 
     implementation 'com.google.android.gms:play-services-mlkit-text-recognition:16.1.2'
 

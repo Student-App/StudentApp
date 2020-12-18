@@ -85,6 +85,11 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         ques.setOnClickListener {
             startActivity(Intent(this, Questions::class.java))
         }
+        messages.setOnClickListener()
+        {
+            startActivity(Intent(this, Messages::class.java))
+
+        }
 
     }
 

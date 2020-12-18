@@ -34,8 +34,6 @@ import kotlinx.android.synthetic.main.update_password.view.*
 import java.io.IOException
 import kotlin.random.Random
 
-
-
 class Profile : AppCompatActivity(), PermissionListener {
     private val currentUser = FirebaseAuth.getInstance().currentUser
     var flag:Boolean = false
@@ -51,27 +49,25 @@ class Profile : AppCompatActivity(), PermissionListener {
         val userId = currentUser?.uid
         val name:TextInputLayout = findViewById(R.id.profile_name)
         val image: CircleImageView = findViewById(R.id.profile_image)
-        var sName = ""
-        var url = ""
+        var sName: String = ""
         val query: Query = FirebaseDatabase.getInstance().reference.child("Users/$userId")
             query.addValueEventListener(object: ValueEventListener{
                 override fun onCancelled(error: DatabaseError) {
                     //
                 }
                 override fun onDataChange(snapshot: DataSnapshot) {
-                    if(snapshot.exists()){
-                        sName = snapshot.child("Name").value.toString()
-                        url = snapshot.child("Image").value.toString()
-                        name.editText?.setText(sName)
 
+
+
+
+                    if(snapshot.exists()){
+                        sName = snapshot.child("name").value.toString()
+                        val url:String = snapshot.child("image").value.toString()
+                        name.editText?.setText(sName)
                     }
                 }
 
             })
-
-
-        //GlideApp.with(this).load(url).into(image)
-
 
 
         //Profile Image
@@ -159,7 +155,7 @@ class Profile : AppCompatActivity(), PermissionListener {
 
             if(newName!= sName){
                 val map = mutableMapOf<String, Any?>()
-                map["Name"] = newName
+                map["name"] = newName
                 FirebaseDatabase.getInstance().getReference("Users/$userId")
                     .updateChildren(map)
                     .addOnSuccessListener {
@@ -177,7 +173,7 @@ class Profile : AppCompatActivity(), PermissionListener {
                         uploader.downloadUrl
                             .addOnSuccessListener{
                                 val map = mutableMapOf<String, Any?>()
-                                map["Image"] = it.toString()
+                                map["image"] = it.toString()
                                 FirebaseDatabase.getInstance().getReference("Users/$userId")
                                     .updateChildren(map)
                                     .addOnSuccessListener {
@@ -241,5 +237,4 @@ class Profile : AppCompatActivity(), PermissionListener {
 
 
 }
-
 
