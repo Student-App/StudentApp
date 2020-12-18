@@ -34,6 +34,8 @@ import kotlinx.android.synthetic.main.update_password.view.*
 import java.io.IOException
 import kotlin.random.Random
 
+
+
 class Profile : AppCompatActivity(), PermissionListener {
     private val currentUser = FirebaseAuth.getInstance().currentUser
     var flag:Boolean = false
@@ -49,7 +51,8 @@ class Profile : AppCompatActivity(), PermissionListener {
         val userId = currentUser?.uid
         val name:TextInputLayout = findViewById(R.id.profile_name)
         val image: CircleImageView = findViewById(R.id.profile_image)
-        var sName:String = ""
+        var sName = ""
+        var url = ""
         val query: Query = FirebaseDatabase.getInstance().reference.child("Users/$userId")
             query.addValueEventListener(object: ValueEventListener{
                 override fun onCancelled(error: DatabaseError) {
@@ -58,12 +61,17 @@ class Profile : AppCompatActivity(), PermissionListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
                     if(snapshot.exists()){
                         sName = snapshot.child("Name").value.toString()
-                        val url:String = snapshot.child("Image").value.toString()
+                        url = snapshot.child("Image").value.toString()
                         name.editText?.setText(sName)
+
                     }
                 }
 
             })
+
+
+        //GlideApp.with(this).load(url).into(image)
+
 
 
         //Profile Image

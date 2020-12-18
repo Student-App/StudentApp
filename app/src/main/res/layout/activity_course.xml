@@ -4,11 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".course_marks.CourseMarks"
+    tools:context=".Resources.Course"
     android:background="@drawable/header">
 
     <LinearLayout
-        android:id="@+id/ll2"
+        android:id="@+id/ll"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
@@ -17,11 +17,10 @@
 
         <TextView
             android:layout_width="match_parent"
-            android:id="@+id/course_name"
             android:layout_height="match_parent"
             android:fontFamily="@font/aclonica"
             android:gravity="center"
-            android:text="Tests"
+            android:text="Courses"
             android:textAlignment="center"
             android:textSize="30sp"
             android:textStyle="bold|italic" />
@@ -29,24 +28,23 @@
 
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recview_course_marks"
-        android:layout_width="347dp"
-        android:layout_height="493dp"
-        android:layout_margin="10dp"
+        android:id="@+id/recview_course"
+        android:layout_width="350dp"
+        android:layout_height="468dp"
         android:layout_marginStart="1dp"
         android:layout_marginEnd="1dp"
-        android:layout_marginBottom="1dp"
         android:scrollbars="vertical"
         app:layoutManager="LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ll2"
-        app:layout_constraintVertical_bias="0.209" />
+        app:layout_constraintTop_toBottomOf="@+id/ll"
+        app:layout_constraintVertical_bias="0.126" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/cadd"
         android:backgroundTint="#FF9800"
-        android:id="@+id/cm_add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:clickable="true"

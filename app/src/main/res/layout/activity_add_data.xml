@@ -8,7 +8,7 @@
     tools:context=".AddData">
 
     <ImageView
-        android:id="@+id/textView"
+        android:id="@+id/iv2"
         android:layout_width="100dp"
         android:layout_height="100dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -20,7 +20,7 @@
         tools:ignore="ContentDescription" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/tv2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/aclonica"
@@ -31,7 +31,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/iv2"
         app:layout_constraintVertical_bias="0.060000002" />
 
     <LinearLayout

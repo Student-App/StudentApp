@@ -3,15 +3,13 @@ package com.example.studentapp
 import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
-import android.view.View
 import android.view.WindowManager
 import android.widget.TextView
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.cardview.widget.CardView
 import androidx.core.view.GravityCompat
-import com.example.studentapp.Resources.UploadViewNotes
-import com.example.studentapp.Resources.ViewResources
+import com.example.studentapp.Ques.Questions
+import com.example.studentapp.Resources.Department
 import com.example.studentapp.attendance.Attendance
 import com.example.studentapp.marks.Marks
 import com.google.android.material.navigation.NavigationView
@@ -44,7 +42,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         val headView = nav_view.getHeaderView(0)
         val name: TextView = headView.findViewById(R.id.student_name)
         val email: TextView = headView.findViewById(R.id.student_email)
-//        val resources  = findViewById<CardView>(R.id.resources)
 
         // Accessing Name and email of current user
         val query: Query = FirebaseDatabase.getInstance().reference.child("Users/$userId")
@@ -54,10 +51,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             }
             override fun onDataChange(snapshot: DataSnapshot) {
                 if(snapshot.exists()){
-                    val sName:String = snapshot.child("Name").value.toString()
+                    val sName:String = snapshot.child("name").value.toString()
                     name.text = sName
 
-                    val sEmail:String = snapshot.child("Email").value.toString()
+                    val sEmail:String = snapshot.child("email").value.toString()
                     email.text = sEmail
                 }
             }
@@ -76,8 +73,17 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         marks.setOnClickListener {
             startActivity(Intent(this, Marks::class.java))
         }
-        resourcesBtn.setOnClickListener{
-            startActivity(Intent(this,UploadViewNotes::class.java))
+
+        res.setOnClickListener {
+            startActivity(Intent(this, Department::class.java))
+        }
+
+        h2t.setOnClickListener {
+            startActivity(Intent(this, Img2Text::class.java))
+        }
+
+        ques.setOnClickListener {
+            startActivity(Intent(this, Questions::class.java))
         }
 
     }
@@ -114,8 +120,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
 
     }
-
-
 
 
 }

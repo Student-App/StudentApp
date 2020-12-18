@@ -8,7 +8,7 @@
     tools:context=".Login">
 
     <ImageView
-        android:id="@+id/textView"
+        android:id="@+id/iv4"
         android:layout_width="100dp"
         android:layout_height="100dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -20,7 +20,7 @@
         tools:ignore="ContentDescription" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/tv4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/aclonica"
@@ -31,11 +31,11 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/iv4"
         app:layout_constraintVertical_bias="0.060000002" />
 
     <LinearLayout
-        android:id="@+id/linearLayout3"
+        android:id="@+id/ll4"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -43,7 +43,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.585"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/tv4"
         app:layout_constraintVertical_bias="0.401">
 
         <com.google.android.material.textfield.TextInputLayout
@@ -106,7 +106,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:visibility="invisible"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
+        app:layout_constraintBottom_toTopOf="@+id/ll4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"

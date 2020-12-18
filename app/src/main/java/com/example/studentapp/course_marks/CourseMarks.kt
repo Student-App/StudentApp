@@ -5,12 +5,14 @@ import android.os.Bundle
 import android.view.WindowManager
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.studentapp.R
 import com.firebase.ui.database.FirebaseRecyclerOptions
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
+import kotlinx.android.synthetic.main.activity_course_marks.*
 
 var adapter: adapterCourseMarks? = null
 class CourseMarks : AppCompatActivity() {
@@ -35,6 +37,8 @@ class CourseMarks : AppCompatActivity() {
             .build()
 
         adapter = adapterCourseMarks(options)
+        val layoutManager: GridLayoutManager = GridLayoutManager(this, 2)
+        recview_course_marks.layoutManager = layoutManager
         recviewCourseMarks.adapter = adapter
 
         val fb: FloatingActionButton = findViewById(R.id.cm_add)

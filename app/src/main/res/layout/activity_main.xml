@@ -130,7 +130,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout">
             <androidx.cardview.widget.CardView
-                android:id="@+id/resourcesBtn"
+                android:id="@+id/res"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="10dp"
@@ -155,8 +155,7 @@
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="15dp"
                         app:srcCompat="@drawable/resource"
-                        tools:ignore="ContentDescription"
-                        />
+                        tools:ignore="ContentDescription" />
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
@@ -192,44 +191,77 @@
 
         </LinearLayout>
 
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="170dp"
-            android:layout_height="match_parent"
-            android:layout_alignParentEnd="true"
-            android:layout_margin="10dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+        <LinearLayout
+            android:id="@+id/linearLayout3"
+            android:layout_width="0dp"
+            android:layout_height="175dp"
+            android:orientation="horizontal"
+            android:padding="10dp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+            <androidx.cardview.widget.CardView
+                android:id="@+id/ques"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:id="@+id/textView8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/q_a"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/questions"
+                        android:textSize="24sp"
+                        app:fontFamily="@font/aclonica" />
+                    <ImageView
+                        android:id="@+id/q_a"
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="15dp"
+                        app:srcCompat="@drawable/q_a"
+                        tools:ignore="ContentDescription" />
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/h2t"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:id="@+id/textView9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/ht"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/h2t"
+                        android:textSize="24sp"
+                        app:fontFamily="@font/aclonica" />
+                    <ImageView
+                        android:id="@+id/ht"
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="15dp"
+                        app:srcCompat="@drawable/marks"
+                        tools:ignore="ContentDescription" />
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
 
-                <TextView
-                    android:id="@+id/textView8"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/ques"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="10dp"
-                    android:text="@string/questions"
-                    android:textSize="24sp"
-                    app:fontFamily="@font/aclonica" />
-
-                <ImageView
-                    android:id="@+id/ques"
-                    android:layout_width="75dp"
-                    android:layout_height="75dp"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="15dp"
-                    app:srcCompat="@drawable/q_a"
-                    tools:ignore="ContentDescription" />
-
-            </RelativeLayout>
-
-        </androidx.cardview.widget.CardView>
+        </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

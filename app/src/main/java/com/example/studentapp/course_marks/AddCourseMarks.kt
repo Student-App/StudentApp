@@ -7,6 +7,7 @@ import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.studentapp.R
+import com.example.studentapp.marks.Marks
 import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
@@ -41,7 +42,7 @@ class AddCourseMarks : AppCompatActivity() {
                 marksObtained.editText?.setText("")
 
                 Toast.makeText(applicationContext,"Test added Successfully", Toast.LENGTH_LONG ).show()
-                val intent = Intent(this, CourseMarks::class.java)
+                val intent = Intent(this, Marks::class.java)
                 startActivity(intent)
                 finish()
             }

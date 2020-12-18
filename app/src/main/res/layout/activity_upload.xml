@@ -4,11 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".course_marks.CourseMarks"
+    tools:context=".uploads.Upload"
     android:background="@drawable/header">
-
     <LinearLayout
-        android:id="@+id/ll2"
+        android:id="@+id/linearLayout6"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
@@ -17,11 +16,10 @@
 
         <TextView
             android:layout_width="match_parent"
-            android:id="@+id/course_name"
             android:layout_height="match_parent"
             android:fontFamily="@font/aclonica"
             android:gravity="center"
-            android:text="Tests"
+            android:text="@string/files"
             android:textAlignment="center"
             android:textSize="30sp"
             android:textStyle="bold|italic" />
@@ -29,11 +27,11 @@
 
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recview_course_marks"
+        android:id="@+id/file_recview"
         android:layout_width="347dp"
-        android:layout_height="493dp"
-        android:layout_margin="10dp"
+        android:layout_height="577dp"
         android:layout_marginStart="1dp"
+        android:layout_marginTop="1dp"
         android:layout_marginEnd="1dp"
         android:layout_marginBottom="1dp"
         android:scrollbars="vertical"
@@ -41,12 +39,12 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ll2"
-        app:layout_constraintVertical_bias="0.209" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.812" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:backgroundTint="#FF9800"
-        android:id="@+id/cm_add"
+        android:id="@+id/new_upload"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:clickable="true"

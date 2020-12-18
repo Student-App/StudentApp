@@ -8,7 +8,7 @@
     tools:context=".course_marks.AddCourseMarks">
 
     <ImageView
-        android:id="@+id/iv1"
+        android:id="@+id/ques_iv"
         android:layout_width="100dp"
         android:layout_height="100dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -20,18 +20,18 @@
         tools:ignore="ContentDescription" />
 
     <TextView
-        android:id="@+id/tv1"
+        android:id="@+id/ques_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/aclonica"
-        android:text="@string/add_test"
+        android:text="Ask Question"
         android:textColor="#000000"
         android:textSize="25sp"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv1"
+        app:layout_constraintTop_toBottomOf="@+id/ques_iv"
         app:layout_constraintVertical_bias="0.060000002" />
 
     <LinearLayout
@@ -45,11 +45,11 @@
         app:layout_constraintVertical_bias="0.77">
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/add_test"
+            android:id="@+id/add_ques_title"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/test_name"
+            android:hint="Question Title"
             android:padding="10dp"
             android:textColorHint="@color/borderColor">
 
@@ -61,27 +61,12 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/test_marks"
+            android:id="@+id/add_question_details"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/maximum_marks"
-            android:padding="10dp"
-            android:textColorHint="@color/borderColor">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="text" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/test_marks_obtained"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/test_marks_obtained"
+            android:inputType="textCapSentences|textMultiLine"
+            android:hint="Question Details"
             android:padding="10dp"
             android:textColorHint="@color/borderColor">
 
@@ -94,13 +79,13 @@
 
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/add_test_marks"
+            android:id="@+id/submit_question"
             android:layout_width="132dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:background="@color/btnBgColor"
             android:padding="10dp"
-            android:text="@string/add_test" />
+            android:text="Ask" />
 
     </LinearLayout>
 

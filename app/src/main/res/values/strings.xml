@@ -40,7 +40,15 @@
     <string name="test_marks_obtained">Marks Obtained</string>
     <string name="add_test">Add Test</string>
     <string name="questions">Questions?</string>
-    <string name="resources_upload">Enter file name</string>
+    <string name="department">Department</string>
+    <string name="computer_science">CSE</string>
+    <string name="electrical">Electrical</string>
+    <string name="mechanical">Mechanical</string>
+    <string name="civil">Civil</string>
+    <string name="files">Files</string>
+    <string name="file_name">File Name</string>
     <string name="upload">Upload</string>
-    <string name="download">Download</string>
+    <string name="h2t">Img2Txt</string>
+    <string name="take_picture">Browse</string>
+    <string name="convert">convert</string>
 </resources>
