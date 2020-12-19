@@ -8,11 +8,9 @@ import android.widget.TextView
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
-import com.example.studentapp.Messenger.Messages
-import com.example.studentapp.Ques.Questions
-import com.example.studentapp.Resources.Department
-import com.example.studentapp.attendance.Attendance
-import com.example.studentapp.marks.Marks
+import com.example.studentapp.adapters.ViewPagerAdapter
+import com.example.studentapp.fragments.AcademicFragment
+import com.example.studentapp.fragments.OthersFragment
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
@@ -26,6 +24,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         setContentView(R.layout.activity_main)
         window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN)
 
+        setUpTabs()
         nav_view.bringToFront()
         setSupportActionBar(toolbar)
         val toggle = ActionBarDrawerToggle(this,drawer_layout,toolbar,R.string.Open,R.string.Close)
@@ -62,35 +61,44 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         })
 
-        timetable.setOnClickListener()
-        {
-            startActivity(Intent(this, TimeTable::class.java))
-        }
-
-        attendance.setOnClickListener {
-            startActivity(Intent(this, Attendance::class.java))
-        }
-
-        marks.setOnClickListener {
-            startActivity(Intent(this, Marks::class.java))
-        }
-
-        res.setOnClickListener {
-            startActivity(Intent(this, Department::class.java))
-        }
-
-        h2t.setOnClickListener {
-            startActivity(Intent(this, Img2Text::class.java))
-        }
-
-        ques.setOnClickListener {
-            startActivity(Intent(this, Questions::class.java))
-        }
-        messages.setOnClickListener()
-        {
-            startActivity(Intent(this, Messages::class.java))
-
-        }
+        //val timetable: CardView = findViewById(R.id.timetable)!!
+//
+//        timetable.setOnClickListener()
+//        {
+//            startActivity(Intent(this, TimeTable::class.java))
+//        }
+//
+//        val attendance: CardView = findViewById(R.id.attendance)
+//        attendance.setOnClickListener {
+//            startActivity(Intent(this, Attendance::class.java))
+//        }
+//
+//        val marks: CardView = findViewById(R.id.marks)
+//        marks.setOnClickListener {
+//            startActivity(Intent(this, Marks::class.java))
+//        }
+//
+//        val res: CardView = findViewById(R.id.res)
+//        res.setOnClickListener {
+//            startActivity(Intent(this, Department::class.java))
+//        }
+//
+//        val h2t: CardView = findViewById(R.id.h2t)
+//        h2t.setOnClickListener {
+//            startActivity(Intent(this, Img2Text::class.java))
+//        }
+//
+//        val ques: CardView = findViewById(R.id.ques)
+//        ques.setOnClickListener {
+//            startActivity(Intent(this, Questions::class.java))
+//        }
+//
+//        val messages: CardView = findViewById(R.id.messages)
+//        messages.setOnClickListener()
+//        {
+//            startActivity(Intent(this, Messages::class.java))
+//
+//        }
 
     }
 
@@ -125,6 +133,14 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             }
         }
 
+    }
+
+    private fun setUpTabs() {
+        val adapter=  ViewPagerAdapter( supportFragmentManager)
+        adapter.addFragment(AcademicFragment(), "Academic")
+        adapter.addFragment(OthersFragment(),"Others")
+        viewPager.adapter = adapter
+        tabLayout.setupWithViewPager(viewPager)
     }
 
 
