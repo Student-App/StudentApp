@@ -19,10 +19,10 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:fontFamily="@font/aclonica"
+
                 android:text="@string/department"
                 android:textSize="30sp"
-                android:textStyle="bold|italic"
+                android:textStyle="bold"
                 android:gravity="center"
                 android:textAlignment="center"
                 />
@@ -67,7 +67,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/aclonica"
+                        android:textStyle="bold"
                         android:text="@string/computer_science"
                         android:textSize="30sp"
                         android:layout_gravity="center"
@@ -105,7 +105,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/aclonica"
+                        android:textStyle="bold"
                         android:text="@string/electrical"
                         android:textSize="30sp"
                         android:layout_gravity="center"
@@ -144,7 +144,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/aclonica"
+                        android:textStyle="bold"
                         android:text="@string/mechanical"
                         android:textSize="30dp"
                         android:layout_gravity="center"
@@ -183,7 +183,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/aclonica"
+                        android:textStyle="bold"
                         android:text="@string/civil"
                         android:textSize="30sp"
                         android:layout_gravity="center"

@@ -1,7 +1,7 @@
 package com.example.studentapp.Messenger
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.example.studentapp.Model
 import com.example.studentapp.R
 import com.google.firebase.auth.FirebaseAuth

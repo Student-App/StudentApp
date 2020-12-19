@@ -14,10 +14,6 @@ import kotlinx.android.synthetic.main.fragment_others.*
 
 
 class OthersFragment : Fragment() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -32,16 +28,16 @@ class OthersFragment : Fragment() {
         savedInstanceState: Bundle?) {
         super.onViewCreated(view,savedInstanceState)
         h2t.setOnClickListener {
-            val intent = Intent (getActivity(), Img2Text::class.java)
-            getActivity()?.startActivity(intent)
+            val intent = Intent (activity, Img2Text::class.java)
+            activity?.startActivity(intent)
         }
         ques.setOnClickListener {
-            val intent = Intent (getActivity(), Questions::class.java)
-            getActivity()?.startActivity(intent)
+            val intent = Intent (activity, Questions::class.java)
+            activity?.startActivity(intent)
         }
         messages.setOnClickListener {
-            val intent = Intent (getActivity(), Messages::class.java)
-            getActivity()?.startActivity(intent)
+            val intent = Intent (activity, Messages::class.java)
+            activity?.startActivity(intent)
         }
 
         inv.visibility = View.INVISIBLE

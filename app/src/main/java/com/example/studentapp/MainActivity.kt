@@ -14,6 +14,8 @@ import com.example.studentapp.fragments.OthersFragment
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
+import com.squareup.picasso.Picasso
+import de.hdodenhof.circleimageview.CircleImageView
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
@@ -38,10 +40,13 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         val currentUser = FirebaseAuth.getInstance().currentUser
         val userId = currentUser?.uid
 
+        var currUsr: Model.User? = null
+
         // header View
         val headView = nav_view.getHeaderView(0)
         val name: TextView = headView.findViewById(R.id.student_name)
         val email: TextView = headView.findViewById(R.id.student_email)
+        val image: CircleImageView = headView.findViewById(R.id.student_image)
 
         // Accessing Name and email of current user
         val query: Query = FirebaseDatabase.getInstance().reference.child("Users/$userId")
@@ -56,6 +61,12 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
                     val sEmail:String = snapshot.child("email").value.toString()
                     email.text = sEmail
+
+                    currUsr = snapshot.getValue(Model.User::class.java)
+                    val uri = currUsr?.image
+                    if (uri != "") {
+                        Picasso.get().load(uri).into(image)
+                    }
                 }
             }
 

@@ -20,10 +20,10 @@
                 android:layout_width="match_parent"
 
                 android:layout_height="match_parent"
-                android:fontFamily="@font/aclonica"
+
                 android:text="Time Table"
                 android:textSize="30sp"
-                android:textStyle="bold|italic"
+                android:textStyle="bold"
                 android:gravity="center"
                 android:textAlignment="center"
                 />
@@ -70,9 +70,9 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/aclonica"
+                        android:textStyle="bold"
                         android:text="Monday"
-                        android:textSize="30sp"
+                        android:textSize="25sp"
                         android:layout_gravity="center"
                         android:layout_marginStart="20sp"
                         android:textAlignment="center"
@@ -108,9 +108,10 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/aclonica"
+                        android:textStyle="bold"
+                        android:textSize="25sp"
                         android:text="Tuesday"
-                        android:textSize="30sp"
+
                         android:layout_gravity="center"
                         android:layout_marginStart="20sp"
                         android:textAlignment="center"
@@ -147,9 +148,9 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/aclonica"
+                        android:textStyle="bold"
+                        android:textSize="25sp"
                         android:text="Wednesday"
-                        android:textSize="30dp"
                         android:layout_gravity="center"
                         android:layout_marginLeft="20sp"
                         android:textAlignment="center"
@@ -188,9 +189,10 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/aclonica"
+                        android:textStyle="bold"
+                        android:textSize="25sp"
                         android:text="Thursday"
-                        android:textSize="30sp"
+
                         android:layout_gravity="center"
                         android:layout_marginLeft="20sp"
                         android:textAlignment="center"
@@ -229,9 +231,10 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/aclonica"
+                        android:textStyle="bold"
+                        android:textSize="25sp"
                         android:text="Friday"
-                        android:textSize="30sp"
+
                         android:layout_gravity="center"
                         android:layout_marginLeft="20sp"
                         android:textAlignment="center"
@@ -271,9 +274,10 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/aclonica"
+                        android:textStyle="bold"
+                        android:textSize="25sp"
                         android:text="Saturday"
-                        android:textSize="30sp"
+
                         android:layout_gravity="center"
                         android:layout_marginLeft="20sp"
                         android:textAlignment="center"
@@ -311,9 +315,10 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/aclonica"
+                        android:textStyle="bold"
+                        android:textSize="25sp"
                         android:text="Sunday"
-                        android:textSize="30sp"
+
                         android:layout_gravity="center"
                         android:layout_marginLeft="20sp"
                         android:textAlignment="center"
@@ -321,16 +326,6 @@
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
-
-
-
-
-
-
-
-
-
-
 
         </GridLayout>
 

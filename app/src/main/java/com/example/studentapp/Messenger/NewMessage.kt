@@ -1,9 +1,9 @@
 package com.example.studentapp.Messenger
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
 import com.example.studentapp.Model
 import com.example.studentapp.R
 import com.google.firebase.database.DataSnapshot
@@ -73,7 +73,7 @@ class UserItem(val user: Model.User): Item<ViewHolder>()
     override fun bind(viewHolder: ViewHolder, position: Int) {
         if (user != null) {
             viewHolder.itemView.username_textview_new_message.text = user.name
-            val uri = user?.image
+            val uri = user.image
             val targetImageView = viewHolder.itemView.imageView_newMessage
             if (uri != "") {
                 Picasso.get().load(uri).into(targetImageView)

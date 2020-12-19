@@ -15,9 +15,6 @@ import kotlinx.android.synthetic.main.fragment_academic.*
 
 
 class AcademicFragment : Fragment() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -32,20 +29,20 @@ class AcademicFragment : Fragment() {
         savedInstanceState: Bundle?) {
         super.onViewCreated(view,savedInstanceState)
         timetable.setOnClickListener {
-            val intent = Intent (getActivity(), TimeTable::class.java)
-            getActivity()?.startActivity(intent)
+            val intent = Intent (activity, TimeTable::class.java)
+            activity?.startActivity(intent)
         }
         attendance.setOnClickListener {
-            val intent = Intent (getActivity(), Attendance::class.java)
-            getActivity()?.startActivity(intent)
+            val intent = Intent (activity, Attendance::class.java)
+            activity?.startActivity(intent)
         }
         marks.setOnClickListener {
-            val intent = Intent (getActivity(), Marks::class.java)
-            getActivity()?.startActivity(intent)
+            val intent = Intent (activity, Marks::class.java)
+            activity?.startActivity(intent)
         }
         res.setOnClickListener {
-            val intent = Intent (getActivity(), Department::class.java)
-            getActivity()?.startActivity(intent)
+            val intent = Intent (activity, Department::class.java)
+            activity?.startActivity(intent)
         }
 
     }

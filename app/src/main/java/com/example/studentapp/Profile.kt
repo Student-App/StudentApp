@@ -26,6 +26,7 @@ import com.karumi.dexter.listener.PermissionDeniedResponse
 import com.karumi.dexter.listener.PermissionGrantedResponse
 import com.karumi.dexter.listener.PermissionRequest
 import com.karumi.dexter.listener.single.PermissionListener
+import com.squareup.picasso.Picasso
 import com.theartofdev.edmodo.cropper.CropImage
 import de.hdodenhof.circleimageview.CircleImageView
 import kotlinx.android.synthetic.main.activity_profile.*
@@ -35,6 +36,11 @@ import java.io.IOException
 import kotlin.random.Random
 
 class Profile : AppCompatActivity(), PermissionListener {
+
+    companion object{
+        var currUsr: Model.User? = null
+    }
+
     private val currentUser = FirebaseAuth.getInstance().currentUser
     var flag:Boolean = false
     var pFlag:Boolean = false
@@ -56,13 +62,15 @@ class Profile : AppCompatActivity(), PermissionListener {
                 //
             }
             override fun onDataChange(snapshot: DataSnapshot) {
-
-
-
-
                 if(snapshot.exists()){
+                    currUsr = snapshot.getValue(Model.User::class.java)
+                    val uri = currUsr?.image
+                    if (uri != "") {
+                        Picasso.get().load(uri).into(image)
+                    }
+
                     sName = snapshot.child("name").value.toString()
-                    val url:String = snapshot.child("image").value.toString()
+
                     name.editText?.setText(sName)
                 }
             }

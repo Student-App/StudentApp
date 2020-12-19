@@ -13,10 +13,13 @@
     android:background="@drawable/background"
     tools:context=".AddData">
 
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/textView"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:src="@drawable/edit_course"
+        app:civ_border_width="1dp"
+        app:civ_border_color="#FF000000"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
         android:layout_marginTop="36dp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout5"
         app:layout_constraintEnd_toEndOf="parent"
@@ -31,14 +34,13 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/aclonica"
         android:text="@string/edit_course"
         android:textColor="#000000"
         android:textSize="25sp"
-
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout5"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.545"
+        app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
         app:layout_constraintVertical_bias="0.362" />

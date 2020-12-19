@@ -1,9 +1,10 @@
 package com.example.studentapp.Messenger
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.*
+import android.view.Menu
+import android.view.MenuItem
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DividerItemDecoration
 import com.example.studentapp.*
 import com.example.studentapp.R
@@ -28,7 +29,7 @@ class Messages : AppCompatActivity() {
         recyclerView_latest_messages.addItemDecoration(DividerItemDecoration(this, DividerItemDecoration.VERTICAL))
 //        setHasOptionsMenu(true)
 //        setSupportActionBar(R.menu.messanger_menu)
-        setTitle("Messenger")
+        title = "Messenger"
 
         adapter.setOnItemClickListener{item, view->
             val intent = Intent(this, ChatLog::class.java)
