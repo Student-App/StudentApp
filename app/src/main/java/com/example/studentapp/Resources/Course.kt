@@ -26,7 +26,7 @@ class Course : AppCompatActivity() {
             )
             .build()
 
-        adapter = adapterCourse(options,text)
+        adapter = adapterCourse(options,text!!)
         recviewCourse.adapter = adapter
 
         val fb: FloatingActionButton = findViewById(R.id.cadd)

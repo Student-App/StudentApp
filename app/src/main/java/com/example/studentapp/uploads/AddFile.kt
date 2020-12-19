@@ -5,6 +5,7 @@ import android.app.ProgressDialog
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.os.Parcelable
 import android.view.View
 import android.view.WindowManager
 import android.widget.Button
@@ -12,6 +13,7 @@ import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.studentapp.R
+import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
@@ -23,16 +25,12 @@ import com.karumi.dexter.listener.PermissionDeniedResponse
 import com.karumi.dexter.listener.PermissionGrantedResponse
 import com.karumi.dexter.listener.PermissionRequest
 import com.karumi.dexter.listener.single.PermissionListener
+import kotlinx.android.synthetic.main.activity_add_file.*
 
 class AddFile : AppCompatActivity(), PermissionListener {
     private lateinit var filePath: Uri
 
 
-
-    val text = intent.getStringExtra("ID")
-    val dept = intent.getStringExtra("dept")
-
-    val uploader: DatabaseReference = FirebaseDatabase.getInstance().getReference("Uploads/$dept/Courses/$text/files")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,12 +39,13 @@ class AddFile : AppCompatActivity(), PermissionListener {
             WindowManager.LayoutParams.FLAG_FULLSCREEN,
             WindowManager.LayoutParams.FLAG_FULLSCREEN
         )
+
+
         val imageBrowse: ImageView = findViewById(R.id.image_browse)
         val imageUpload: ImageView = findViewById(R.id.imageUpload)
         val cancelFile: ImageView = findViewById(R.id.cancel_file)
 
         val upload: Button = findViewById(R.id.upload_file)
-
         imageUpload.visibility = View.INVISIBLE
         cancelFile.visibility = View.INVISIBLE
 
@@ -71,31 +70,36 @@ class AddFile : AppCompatActivity(), PermissionListener {
     }
 
     private fun processUpload() {
+        var text: String? = intent.getStringExtra("ID") ?: ""
+        var dept: String? = intent.getStringExtra("dept") ?: ""
+        val fileName: TextInputLayout = findViewById(R.id.file_name)
 
-        lateinit var progressDialog: ProgressDialog
-        progressDialog.setTitle("File Uploading.....!!!")
+        val uploader: DatabaseReference = FirebaseDatabase.getInstance().getReference("Uploads/$dept/Courses/$text/files").push()
+
+        val refrence: StorageReference = FirebaseStorage.getInstance().getReference("Resources/"+fileName.editText?.text.toString()+".pdf")
+        val progressDialog = ProgressDialog(this@AddFile)
+
+        progressDialog.setTitle("File Uploading")
         progressDialog.show()
 
-
-        val refrence: StorageReference = FirebaseStorage.getInstance().getReference("Resources/"+System.currentTimeMillis()+".pdf")
         refrence.putFile(filePath)
             .addOnSuccessListener {
                 refrence.downloadUrl
                     .addOnSuccessListener{
-                        val fileTitle: TextInputLayout = findViewById(R.id.file_name)
-                        val imageBrowse: ImageView = findViewById(R.id.image_browse)
-                        val imageUpload: ImageView = findViewById(R.id.imageUpload)
-                        val cancelFile: ImageView = findViewById(R.id.cancel_file)
+//                        val fileTitle: TextInputEditText = findViewById(R.id.fileName)
+//                        val imageBrowse: ImageView = findViewById(R.id.image_browse)
+//                        val imageUpload: ImageView = findViewById(R.id.imageUpload)
+//                        val cancelFile: ImageView = findViewById(R.id.cancel_file)
                         val map = mutableMapOf<String, Any?>()
-                        map["file_name"] = fileTitle.editText.toString()
+                        map["file_name"] = fileName.editText?.text.toString()
                         map["file_url"] = it.toString()
-                        uploader.push().key?.let { it1 ->
-                            uploader.child(it1).setValue(map)
+                        uploader.let { it1 ->
+                            uploader.setValue(map)
                                 .addOnSuccessListener {
-                                    imageUpload.visibility = View.INVISIBLE
-                                    cancelFile.visibility = View.INVISIBLE
-                                    imageBrowse.visibility = View.VISIBLE
-                                    fileTitle.editText?.setText("")
+//                                    imageUpload.visibility = View.INVISIBLE
+//                                    cancelFile.visibility = View.INVISIBLE
+//                                    imageBrowse.visibility = View.VISIBLE
+                                    fileName.editText?.setText("")
                                     progressDialog.dismiss()
                                     Toast.makeText(this, "File uploaded Successfully", Toast.LENGTH_SHORT ).show()
                                 }
@@ -108,7 +112,7 @@ class AddFile : AppCompatActivity(), PermissionListener {
             }
             .addOnProgressListener {
                 var percent = (100*it.bytesTransferred/it.totalByteCount)
-                progressDialog.setMessage("Uploaded"+ percent.toInt() +"%")
+                progressDialog.setMessage("Uploaded "+ percent.toInt() +"%")
             }
     }
 
