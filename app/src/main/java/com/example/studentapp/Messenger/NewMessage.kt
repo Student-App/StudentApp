@@ -1,9 +1,11 @@
-package com.example.studentapp
+package com.example.studentapp.Messenger
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import com.example.studentapp.Model
+import com.example.studentapp.R
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase

@@ -44,17 +44,17 @@
         <activity android:name=".Day" />
         <activity android:name=".TimeTable" />
         <activity android:name=".Register" />
-        <activity android:name=".ChatLog"
+        <activity android:name=".Messenger.ChatLog"
             android:theme="@style/MessageAppTheme"
             >
-            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".NewMessage" />
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".Messenger.NewMessage" />
         </activity>
-        <activity android:name=".Messages"
+        <activity android:name=".Messenger.Messages"
             android:theme="@style/MessageAppTheme">
         </activity>
-        <activity android:name=".NewMessage"
+        <activity android:name=".Messenger.NewMessage"
             android:theme="@style/MessageAppTheme">
-            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".Messages" />
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".Messenger.Messages" />
         </activity>
         <activity android:name=".Login">
             <intent-filter>

@@ -1,23 +1,17 @@
-package com.example.studentapp
+package com.example.studentapp.Messenger
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.*
-import android.view.View.inflate
-import android.widget.Toolbar
-import androidx.core.content.res.ColorStateListInflaterCompat.inflate
 import androidx.recyclerview.widget.DividerItemDecoration
+import com.example.studentapp.*
+import com.example.studentapp.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
-import com.squareup.picasso.Picasso
 import com.xwray.groupie.GroupAdapter
-import com.xwray.groupie.Item
 import com.xwray.groupie.ViewHolder
-import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_messages.*
-import kotlinx.android.synthetic.main.latest_message_row.view.*
-import kotlinx.android.synthetic.main.user_chat.view.*
 
 class Messages : AppCompatActivity() {
 
