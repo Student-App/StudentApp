@@ -51,23 +51,23 @@ class Profile : AppCompatActivity(), PermissionListener {
         val image: CircleImageView = findViewById(R.id.profile_image)
         var sName: String = ""
         val query: Query = FirebaseDatabase.getInstance().reference.child("Users/$userId")
-            query.addValueEventListener(object: ValueEventListener{
-                override fun onCancelled(error: DatabaseError) {
-                    //
+        query.addValueEventListener(object: ValueEventListener{
+            override fun onCancelled(error: DatabaseError) {
+                //
+            }
+            override fun onDataChange(snapshot: DataSnapshot) {
+
+
+
+
+                if(snapshot.exists()){
+                    sName = snapshot.child("name").value.toString()
+                    val url:String = snapshot.child("image").value.toString()
+                    name.editText?.setText(sName)
                 }
-                override fun onDataChange(snapshot: DataSnapshot) {
+            }
 
-
-
-
-                    if(snapshot.exists()){
-                        sName = snapshot.child("name").value.toString()
-                        val url:String = snapshot.child("image").value.toString()
-                        name.editText?.setText(sName)
-                    }
-                }
-
-            })
+        })
 
 
         //Profile Image
@@ -131,7 +131,7 @@ class Profile : AppCompatActivity(), PermissionListener {
                         when {
                             task.isSuccessful -> {
                                 currentUser.updatePassword(updatedPass)
-                                    .addOnCompleteListener{ task ->  
+                                    .addOnCompleteListener{ task ->
                                         if(task.isSuccessful){
                                             alert.dismiss()
                                             Toast.makeText(this, "Password Changed Successfully", Toast.LENGTH_SHORT ).show()
@@ -237,4 +237,3 @@ class Profile : AppCompatActivity(), PermissionListener {
 
 
 }
-

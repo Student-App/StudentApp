@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.studentapp">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -43,14 +44,17 @@
         <activity android:name=".Day" />
         <activity android:name=".TimeTable" />
         <activity android:name=".Register" />
-        <activity android:name=".ChatLog"></activity>
+        <activity android:name=".ChatLog"
+            android:theme="@style/MessageAppTheme"
+            >
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".NewMessage" />
+        </activity>
         <activity android:name=".Messages"
             android:theme="@style/MessageAppTheme">
-
         </activity>
         <activity android:name=".NewMessage"
             android:theme="@style/MessageAppTheme">
-
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".Messages" />
         </activity>
         <activity android:name=".Login">
             <intent-filter>

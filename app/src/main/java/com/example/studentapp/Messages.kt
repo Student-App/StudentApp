@@ -30,11 +30,12 @@ class Messages : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_messages)
+        recyclerView_latest_messages.adapter = adapter
         recyclerView_latest_messages.addItemDecoration(DividerItemDecoration(this, DividerItemDecoration.VERTICAL))
 //        setHasOptionsMenu(true)
 //        setSupportActionBar(R.menu.messanger_menu)
         setTitle("Messenger")
-        recyclerView_latest_messages.adapter = adapter
+
         adapter.setOnItemClickListener{item, view->
             val intent = Intent(this, ChatLog::class.java)
             val row = item as LatestMessageRow

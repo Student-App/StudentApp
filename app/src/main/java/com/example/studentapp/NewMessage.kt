@@ -71,9 +71,11 @@ class UserItem(val user: Model.User): Item<ViewHolder>()
     override fun bind(viewHolder: ViewHolder, position: Int) {
         if (user != null) {
             viewHolder.itemView.username_textview_new_message.text = user.name
-        }
-        if (user != null) {
-//            Picasso.get().load(user.Image).into(viewHolder.itemView.imageView_newMessage)
+            val uri = user?.image
+            val targetImageView = viewHolder.itemView.imageView_newMessage
+            if (uri != "") {
+                Picasso.get().load(uri).into(targetImageView)
+            }
         }
 
     }
