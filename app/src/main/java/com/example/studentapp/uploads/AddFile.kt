@@ -26,6 +26,8 @@ import com.karumi.dexter.listener.PermissionGrantedResponse
 import com.karumi.dexter.listener.PermissionRequest
 import com.karumi.dexter.listener.single.PermissionListener
 import kotlinx.android.synthetic.main.activity_add_file.*
+import java.text.SimpleDateFormat
+import java.util.*
 
 class AddFile : AppCompatActivity(), PermissionListener {
     private lateinit var filePath: Uri
@@ -75,8 +77,10 @@ class AddFile : AppCompatActivity(), PermissionListener {
         val fileName: TextInputLayout = findViewById(R.id.file_name)
 
         val uploader: DatabaseReference = FirebaseDatabase.getInstance().getReference("Uploads/$dept/Courses/$text/files").push()
-
-        val refrence: StorageReference = FirebaseStorage.getInstance().getReference("Resources/"+fileName.editText?.text.toString()+".pdf")
+        val currDate = SimpleDateFormat("dd/MM/yyyy")
+        val todayDate = Date()
+        val thisDate = currDate.format(todayDate)
+        val refrence: StorageReference = FirebaseStorage.getInstance().getReference("Resources/"+fileName.editText?.text.toString() + thisDate +".pdf")
         val progressDialog = ProgressDialog(this@AddFile)
 
         progressDialog.setTitle("File Uploading")
@@ -91,7 +95,7 @@ class AddFile : AppCompatActivity(), PermissionListener {
 //                        val imageUpload: ImageView = findViewById(R.id.imageUpload)
 //                        val cancelFile: ImageView = findViewById(R.id.cancel_file)
                         val map = mutableMapOf<String, Any?>()
-                        map["file_name"] = fileName.editText?.text.toString()
+                        map["file_name"] = fileName.editText?.text.toString() + thisDate
                         map["file_url"] = it.toString()
                         uploader.let { it1 ->
                             uploader.setValue(map)
