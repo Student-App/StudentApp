@@ -1,11 +1,13 @@
 package com.example.studentapp.attendance
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.studentapp.R
 import com.firebase.ui.database.FirebaseRecyclerOptions
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 
@@ -27,6 +29,12 @@ class Attendance : AppCompatActivity() {
 
         adapter = adapterAttendance(options)
         recviewAttend.adapter = adapter
+
+        val fb: FloatingActionButton = findViewById(R.id.add_attendance)
+        fb.setOnClickListener{
+            val intent = Intent(this, AddAttendance::class.java)
+            startActivity(intent)
+        }
 
     }
 

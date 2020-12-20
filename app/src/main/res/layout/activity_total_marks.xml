@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/header">
+
+    <LinearLayout
+        android:id="@+id/linearLayoutTotalMarks"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:textColor="#000"
+            android:layout_width="match_parent"
+            android:id="@+id/course_name"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="Total Marks"
+            android:textAlignment="center"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="608dp"
+        android:layout_margin="10dp"
+        android:layout_marginBottom="16dp"
+        android:stretchColumns="*"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutTotalMarks"
+        app:layout_constraintVertical_bias="0.0"
+        tools:context=".showTotal.TotalMarks">
+
+        <TableRow
+            android:weightSum="1">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_column="0"
+                android:background="@drawable/cell_shape"
+                android:padding="10dp"
+                android:text="Test Name"
+                android:textAlignment="textStart"
+                android:textColor="#000"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:gravity="center"
+                android:padding="10dp"
+                android:layout_width="0dp"
+                android:layout_column="1"
+                android:background="@drawable/cell_shape"
+                android:text="Max Marks"
+                android:textColor="#000"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_column="2"
+                android:textColor="#000"
+                android:gravity="center"
+                android:background="@drawable/cell_shape"
+                android:padding="10dp"
+                android:text="Obtained"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+        </TableRow>
+
+        <androidx.recyclerview.widget.RecyclerView
+
+            android:id="@+id/TotalMarksRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="vertical"
+            app:layoutManager="LinearLayoutManager"
+            tools:layout_editor_absoluteX="22dp"
+            tools:layout_editor_absoluteY="83dp" />
+
+        <TableRow
+            android:weightSum="1">
+
+            <TextView
+                android:textColor="#000"
+                android:layout_column="0"
+                android:background="@drawable/cell_shape"
+                android:textAlignment="textStart"
+                android:padding="10dp"
+                android:text="Total"
+                android:layout_width="0dp"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/CourseTotalMarks"
+                android:textColor="#000"
+                android:layout_column="1"
+                android:layout_width="0dp"
+                android:background="@drawable/cell_shape"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="0"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/CourseMarksObtained"
+                android:layout_width="0dp"
+                android:textColor="#000"
+                android:layout_column="2"
+                android:width="130dp"
+                android:gravity="center"
+                android:background="@drawable/cell_shape"
+                android:padding="10dp"
+                android:text="0"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+        </TableRow>
+
+
+    </TableLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

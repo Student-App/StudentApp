@@ -58,4 +58,15 @@
         app:srcCompat="@android:drawable/ic_input_add"
         android:focusable="true" />
 
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/show_total"
+        android:layout_width="120dp"
+        android:background="@color/btnBgColor"
+        android:text="@string/total"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recview_course_marks" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,11 +3,13 @@ package com.example.studentapp.course_marks
 import android.content.Intent
 import android.os.Bundle
 import android.view.WindowManager
+import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.studentapp.R
+import com.example.studentapp.showTotal.TotalMarks
 import com.firebase.ui.database.FirebaseRecyclerOptions
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.auth.FirebaseAuth
@@ -36,7 +38,7 @@ class CourseMarks : AppCompatActivity() {
             )
             .build()
 
-        adapter = adapterCourseMarks(options)
+        adapter = adapterCourseMarks(options,text)
         val layoutManager: GridLayoutManager = GridLayoutManager(this, 2)
         recview_course_marks.layoutManager = layoutManager
         recviewCourseMarks.adapter = adapter
@@ -44,6 +46,13 @@ class CourseMarks : AppCompatActivity() {
         val fb: FloatingActionButton = findViewById(R.id.cm_add)
         fb.setOnClickListener{
             val intent = Intent(this, AddCourseMarks::class.java)
+            intent.putExtra("ID", text)
+            startActivity(intent)
+        }
+
+        val showTotal: Button = findViewById(R.id.show_total)
+        showTotal.setOnClickListener {
+            val intent = Intent(this, TotalMarks::class.java)
             intent.putExtra("ID", text)
             startActivity(intent)
         }
