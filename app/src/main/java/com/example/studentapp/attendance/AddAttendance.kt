@@ -28,7 +28,8 @@ class AddAttendance : AppCompatActivity() {
         val cName: TextInputLayout = findViewById(R.id.add_attendance_course)
 
         val map = mutableMapOf<String, Any?>()
-        map["test_name"] = cName.editText?.text.toString().toLowerCase()
+        map["course_name"] = cName.editText?.text.toString().toLowerCase()
+        map["Attendance"] = 0
 
 
 
